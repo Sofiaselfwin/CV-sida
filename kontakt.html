@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sofia Selfwin – Kontakt</title>
+    <meta
+      name="description"
+      content="Kontakta Sofia Selfwin, IT‑projektledare – kontaktuppgifter och formulär."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-avatar">
+            <img
+              src="profile.jpg"
+              alt="Porträttbild som representerar Sofia Selfwin"
+            />
+          </div>
+          <div class="logo-text">
+            <span>Sofia Selfwin</span>
+            <span>IT‑projektledare · CV</span>
+          </div>
+        </a>
+
+        <nav aria-label="Huvudmeny">
+          <a href="erfarenhet.html" class="nav-link">Erfarenhet</a>
+          <a href="utbildning-kompetens.html" class="nav-link">Utbildning &amp; kompetens</a>
+          <a href="kontakt.html" class="nav-link nav-link--primary">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="kontakt-heading">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <p class="card-subtitle">Kontakt</p>
+              <h1 id="kontakt-heading" class="card-title">Hör gärna av dig</h1>
+            </div>
+            <span class="pill">Formulär &amp; uppgifter</span>
+          </div>
+
+          <p>
+            Använd formuläret nedan för att kontakta mig kring uppdrag, frågor
+            eller nätverkande. Formuläret använder både HTML‑validering och
+            JavaScript‑logik för att kontrollera indata.
+          </p>
+
+          <form
+            class="form"
+            data-contact-form
+            novalidate
+            aria-describedby="kontakt-beskrivning"
+          >
+            <p id="kontakt-beskrivning" class="form-hint">
+              Fält markerade med * är obligatoriska.
+            </p>
+
+            <div class="form-row form-row--inline">
+              <div class="form-row">
+                <label for="name">Namn *</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  minlength="2"
+                  autocomplete="name"
+                />
+                <span class="form-hint">Skriv för‑ och efternamn.</span>
+                <span class="form-error" data-error></span>
+              </div>
+
+              <div class="form-row">
+                <label for="email">E‑post *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                />
+                <span class="form-hint">Ange en adress du läser regelbundet.</span>
+                <span class="form-error" data-error></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Ämne</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                maxlength="120"
+                placeholder="Exempel: Förfrågan om IT‑projekt"
+              />
+              <span class="form-hint">Frivilligt, men hjälper mig att förstå din förfrågan.</span>
+              <span class="form-error" data-error></span>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Meddelande *</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                minlength="20"
+                maxlength="800"
+              ></textarea>
+              <div class="message-counter" data-message-counter>0 / 800</div>
+              <span class="form-hint">
+                Beskriv kort vem du är och vad du vill prata om (minst 20 tecken).
+              </span>
+              <span class="form-error" data-error></span>
+            </div>
+
+            <button type="submit" class="button button--primary">
+              Skicka meddelande
+            </button>
+            <p class="form-success" data-form-success></p>
+          </form>
+        </article>
+      </section>
+
+      <aside aria-label="Övrig kontaktinformation">
+        <div class="profile-card card">
+          <div class="profile-photo">
+            <img
+              src="profile.jpg"
+              alt="Porträttbild av Sofia Selfwin"
+            />
+          </div>
+
+          <div class="profile-meta">
+            <div class="profile-meta-row">
+              <span class="profile-meta-label">E‑post</span>
+              <span>sofia.selfwin@hotmail.se</span>
+            </div>
+            <div class="profile-meta-row">
+              <span class="profile-meta-label">Plats</span>
+              <span>Stockholm</span>
+            </div>
+          </div>
+
+          <p class="profile-badge">
+            
+          </p>
+
+          <div>
+            <p class="profile-meta-label">Länkar</p>
+            <div class="profile-links">
+              <a href="index.html">Till startsidan</a>
+              <a
+                href="https://www.linkedin.com/in/sofia-selfwin-749b24132/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <span>&copy; <span data-year></span> Sofia Selfwin. CV‑sajt för kursuppgift.</span>
+      <span>Kontaktsida.</span>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+

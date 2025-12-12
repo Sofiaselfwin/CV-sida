@@ -1,0 +1,571 @@
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f7f5f2;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: #819891;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Layout */
+/* Header: Den enda delen som ska följa med när man scrollar (sticky) */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  position: sticky; /* Följer med vid scrollning */
+  top: 0;
+  z-index: 1000; /* Ligger över andra element */
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid #819891;
+  overflow: hidden;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text span:first-child {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #1f2933;
+}
+
+.logo-text span:last-child {
+  font-size: 0.75rem;
+  color: #6c7a89;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #1f2933;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: rgba(129, 152, 145, 0.12);
+  border-color: rgba(129, 152, 145, 0.4);
+  text-decoration: none;
+}
+
+.nav-link--primary {
+  background: #819891;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-link--primary:hover,
+.nav-link--primary:focus-visible {
+  background: #687a74;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 1.4fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Reusable cards (component) */
+/* Card: INTE sticky - ska stanna på sin plats när man scrollar */
+/* !important används för att säkerställa att inga andra regler kan göra den sticky */
+.card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1.6rem 1.8rem;
+  position: static !important; /* Stannar på sin plats, följer INTE med vid scrollning */
+  box-shadow: none !important; /* Ingen skugga på card-element */
+}
+
+.card + .card {
+  margin-top: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.card-title {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #8c98a6;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 152, 145, 0.35);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #4b5c57;
+  background: rgba(129, 152, 145, 0.15);
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+
+.card-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.7);
+}
+
+.card-list li:last-child {
+  border-bottom: none;
+}
+
+.card-list-title {
+  font-weight: 500;
+}
+
+.card-list-meta {
+  font-size: 0.8rem;
+  color: #8c98a6;
+  text-align: right;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Hero / intro */
+/* Hero: INTE sticky - ska stanna på sin plats när man scrollar */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
+  position: static; /* Stannar på sin plats, följer INTE med vid scrollning */
+}
+
+.hero-kicker {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4b5c57;
+}
+
+.hero-title {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: clamp(2rem, 2.7vw, 2.6rem);
+  letter-spacing: 0.02em;
+}
+
+.hero-highlight {
+  background: linear-gradient(120deg, #819891, #a3b7b1);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-lead {
+  max-width: 40rem;
+  color: #2d3741;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  color: #1f2933;
+  background: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease,
+    background 0.12s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+  border-color: rgba(129, 152, 145, 0.5);
+}
+
+.button--primary {
+  background: #819891;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  background: #687a74;
+}
+
+.button--ghost {
+  background: #ffffff;
+}
+
+.button small {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* Aside */
+aside {
+  position: relative;
+}
+
+/* Profile-card: Sticky ENDAST för aside på höger sida, INTE för huvudinnehållet */
+.profile-card {
+  position: sticky; /* Följer med vid scrollning, men bara i aside-sektionen */
+  top: 5.5rem; /* Börjar följa med efter att headern passerat */
+}
+
+.profile-photo {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.profile-meta {
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.profile-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.profile-meta-label {
+  color: #8c98a6;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.profile-links a {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+}
+
+.profile-badge {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: #4b5c57;
+}
+
+/* Sections */
+/* Section och Article: INTE sticky - ska stanna på sin plats när man scrollar */
+section {
+  margin-bottom: 1.5rem;
+  position: static; /* Stannar på sin plats, följer INTE med vid scrollning */
+}
+
+section > h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #8c98a6;
+  margin-bottom: 0.4rem;
+}
+
+article {
+  position: static; /* Stannar på sin plats, följer INTE med vid scrollning */
+}
+
+/* Timeline style for experience and education */
+.timeline {
+  border-left: 1px solid rgba(148, 163, 184, 0.7);
+  padding-left: 1.1rem;
+  margin-top: 0.6rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.15rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #819891;
+  box-shadow: 0 0 0 4px rgba(129, 152, 145, 0.25);
+}
+
+.timeline-title {
+  font-weight: 500;
+}
+
+.timeline-meta {
+  font-size: 0.8rem;
+  color: #8c98a6;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+}
+
+/* Contact form */
+.form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-row--inline {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+label {
+  font-size: 0.85rem;
+}
+
+input,
+textarea {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: #ffffff;
+  padding: 0.55rem 0.7rem;
+  color: #1f2933;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border-color: #819891;
+  box-shadow: 0 0 0 1px rgba(129, 152, 145, 0.35);
+  background: #ffffff;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: #8c98a6;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #fecaca;
+}
+
+.form-success {
+  font-size: 0.85rem;
+  color: #bbf7d0;
+  margin-top: 0.2rem;
+}
+
+.message-counter {
+  font-size: 0.75rem;
+  color: #4b5c57;
+  text-align: right;
+}
+
+.field-invalid input,
+.field-invalid textarea {
+  border-color: #f87171;
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.4);
+}
+
+/* Dynamic toggle section */
+.toggle-section {
+  border-radius: 1rem;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  margin-top: 0.7rem;
+}
+
+.toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.toggle-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.toggle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  font-size: 0.8rem;
+}
+
+.toggle-body {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.toggle-body[hidden] {
+  display: none;
+}
+
+/* Theme toggle */
+/* Footer */
+footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 1rem 1.5rem 1.4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  color: #8c98a6;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
+
