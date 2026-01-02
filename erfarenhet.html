@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sofia Selfwin – Erfarenhet</title>
     <meta
       name="description"
       content="Arbetslivserfarenhet för Sofia Selfwin, IT‑projektledare."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
@@ -22,9 +22,9 @@
         <a href="index.html" class="logo">
           <div class="logo-avatar">
             <img
-              src="profile.jpg"
+              src="images/profile.jpg"
               alt="Porträttbild som representerar Sofia Selfwin"
-            />
+            >
           </div>
           <div class="logo-text">
             <span>Sofia Selfwin</span>
@@ -42,13 +42,14 @@
 
     <main>
       <section aria-labelledby="erfarenhet-heading">
+        <h2 class="sr-only">Erfarenhet</h2>
         <article class="card">
           <div class="card-header">
             <div>
               <p class="card-subtitle">Arbetslivserfarenhet</p>
-              <h1 id="erfarenhet-heading" class="card-title">
+              <h2 id="erfarenhet-heading" class="card-title">
                 Utvalda roller &amp; uppdrag
-              </h1>
+              </h2>
             </div>
             <span class="pill">Erfarenhet</span>
           </div>
@@ -59,7 +60,7 @@
             omfattar både operativt arbete och deltagande i utvecklingsprojekt.
           </p>
 
-          <div class="timeline" aria-label="Tidslinje med erfarenheter">
+          <div class="timeline">
             <div class="timeline-item">
               <h2 class="timeline-title">
                 Administratör / Handläggare
@@ -76,6 +77,7 @@
             </div>
           </div>
 
+          <!-- Toggle-funktionalitet: expanderar/kollapsar innehåll vid klick -->
           <div class="toggle-section">
             <button
               type="button"
@@ -105,7 +107,7 @@
             <img
               src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
               alt="Illustrativ bild av kontorsmiljö"
-            />
+            >
           </div>
 
           <div class="profile-meta">
@@ -126,6 +128,7 @@
     </main>
 
     <footer>
+      <!-- Dynamiskt innehåll: året uppdateras automatiskt via JavaScript -->
       <span>&copy; <span data-year></span> Sofia Selfwin. CV‑sajt för kursuppgift.</span>
       <span>Erfarenhetssida.</span>
     </footer>

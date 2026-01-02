@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" headingoffset="0">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sofia Selfwin – CV & Profil</title>
     <meta
       name="description"
       content="CV och portfölj för Sofia Selfwin, IT‑projektledare."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- Semantisk HTML: header för sidhuvud -->
     <header>
       <div class="header-inner">
         <a href="index.html" class="logo">
           <div class="logo-avatar">
             <img
-              src="profile.jpg"
+              src="images/profile.jpg"
               alt="Porträttbild som representerar Sofia Selfwin"
-            />
+            >
           </div>
           <div class="logo-text">
             <span>Sofia Selfwin</span>
@@ -32,6 +33,7 @@
           </div>
         </a>
 
+        <!-- Semantisk HTML: nav för navigation -->
         <nav aria-label="Huvudmeny">
           <a href="erfarenhet.html" class="nav-link">Erfarenhet</a>
           <a href="utbildning-kompetens.html" class="nav-link">Utbildning &amp; kompetens</a>
@@ -40,14 +42,18 @@
       </div>
     </header>
 
+    <!-- Semantisk HTML: main för huvudinnehåll -->
     <main>
+      <!-- Semantisk HTML: section för innehållssektion -->
+      <h1 id="profil-heading" class="sr-only">Sofia Selfwin - CV & Profil</h1>
       <section aria-labelledby="profil-heading">
+        <h2 class="sr-only">Profil</h2>
         <article class="card">
           <header class="hero">
             <p class="hero-kicker">CV · IT‑projektledning</p>
-            <h1 id="profil-heading" class="hero-title">
+            <h2 class="hero-title">
               <span class="hero-highlight">Sofia Selfwin</span>
-            </h1>
+            </h2>
             <p class="hero-lead">
               Studerande IT-projektledare med erfarenhet inom telefoni och digitala
               system. Jag har arbetat flera år inom IT-avdelningen på Tiohundra med
@@ -60,7 +66,7 @@
             </p>
           </header>
 
-          <div class="hero-ctas" aria-label="Gå direkt till undersidor">
+          <div class="hero-ctas">
             <a href="erfarenhet.html" class="button button--primary">
               Erfarenhet
               <small>projekt &amp; roller</small>
@@ -104,13 +110,14 @@
             </div>
           </div>
 
-          <div class="tags" aria-label="Nyckelord">
+          <div class="tags">
             <span class="tag">Agil arbetsmetodik</span>
             <span class="tag">Kravhantering</span>
             <span class="tag">Stakeholder management</span>
             <span class="tag">Digitala tjänster</span>
           </div>
 
+          <!-- Toggle-funktionalitet: expanderar/kollapsar innehåll vid klick -->
           <div class="toggle-section">
             <button
               type="button"
@@ -195,13 +202,14 @@
         </article>
       </section>
 
+      <!-- Semantisk HTML: aside för sidinformation -->
       <aside aria-label="Snabbfakta om Sofia">
         <div class="profile-card card">
           <div class="profile-photo">
             <img
               src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg"
               alt="Illustrativ bild av en person som arbetar vid en laptop"
-            />
+            >
           </div>
 
           <div class="profile-meta">
@@ -240,7 +248,9 @@
       </aside>
     </main>
 
+    <!-- Semantisk HTML: footer för sidfot -->
     <footer>
+      <!-- Dynamiskt innehåll: året uppdateras automatiskt via JavaScript -->
       <span>&copy; <span data-year></span> Sofia Selfwin. CV‑sajt för kursuppgift.</span>
       <span>Byggd med HTML, CSS och JavaScript.</span>
     </footer>
