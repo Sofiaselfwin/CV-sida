@@ -17,30 +17,25 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <div class="logo-avatar">
-            <img
-              src="images/profile.jpg"
-              alt="Porträttbild som representerar Sofia Selfwin"
-            >
-          </div>
-          <div class="logo-text">
-            <span>Sofia Selfwin</span>
-            <span>IT‑projektledare · CV</span>
-          </div>
-        </a>
-
-        <nav aria-label="Huvudmeny">
-          <a href="erfarenhet.html" class="nav-link">Erfarenhet</a>
-          <a href="utbildning-kompetens.html" class="nav-link nav-link--primary">
-            Utbildning &amp; kompetens
+    <div id="app">
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="logo">
+            <div class="logo-avatar">
+              <img
+                src="images/profile.jpg"
+                alt="Porträttbild som representerar Sofia Selfwin"
+              >
+            </div>
+            <div class="logo-text">
+              <span>Sofia Selfwin</span>
+              <span>IT‑projektledare · CV</span>
+            </div>
           </a>
-          <a href="kontakt.html" class="nav-link">Kontakt</a>
-        </nav>
-      </div>
-    </header>
+
+          <nav-bar />
+        </div>
+      </header>
 
     <main>
       <h1 id="utbildning-heading" class="sr-only">Utbildning & kompetens - Sofia Selfwin</h1>
@@ -174,7 +169,11 @@
       <span>Utbildning &amp; kompetens.</span>
     </footer>
 
-    <script src="script.js" defer></script>
+      <script src="script.js" defer></script>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
 
